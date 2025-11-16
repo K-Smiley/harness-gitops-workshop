@@ -11,6 +11,6 @@ connector:
     auth:
       type: UsernamePassword
       spec:
-        username: DOCKER_USERNAME
+        username: ksmiley237
         passwordRef: docker
     executeOnDelegate: false
