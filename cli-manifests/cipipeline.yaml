@@ -25,26 +25,26 @@ pipeline:
             spec: {}
           execution:
             steps:
-              - step:
-                  type: Owasp
-                  name: Run OWASP Scan
-                  identifier: Run_OWASP_Scan
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      workspace: apps/podinfo
-                      name: Harness GitOps Workshop
-                      variant: main
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: none 
-                      analyzers:
-                        ossIndex: false
-                    settings:
-                      ossIndexToken: <+secrets.getValue("ossindex_token")>
+              # - step:
+              #     # type: Owasp
+              #     # name: Run OWASP Scan
+              #     # identifier: Run_OWASP_Scan
+              #     # spec:
+              #     #   mode: orchestration
+              #     #   config: default
+              #     #   target:
+              #     #     type: repository
+              #     #     workspace: apps/podinfo
+              #     #     name: Harness GitOps Workshop
+              #     #     variant: main
+              #     #   advanced:
+              #     #     log:
+              #     #       level: info
+              #     #     fail_on_severity: none 
+              #     #     analyzers:
+              #     #       ossIndex: false
+              #     #   settings:
+              #     #     ossIndexToken: <+secrets.getValue("ossindex_token")>
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry
