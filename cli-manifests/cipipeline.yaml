@@ -41,6 +41,8 @@ pipeline:
                       log:
                         level: info
                       fail_on_severity: none 
+                    settings:
+                      ossIndexToken: <+secrets.getValue("ossindex_token")>
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry
